@@ -1,0 +1,10 @@
+# Standard Vite/React ignores
+node_modules
+dist
+dist-ssr
+*.local
+.vercel
+.DS_Store
+*.tsbuildinfo
+tmp
+.gemini

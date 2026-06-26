@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swarnima Singh Resume</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        color: #111827;
+        background: #f8fafc;
+      }
+
+      main {
+        max-width: 820px;
+        margin: 40px auto;
+        padding: 48px;
+        background: white;
+        border: 1px solid #e5e7eb;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 42px;
+      }
+
+      h2 {
+        margin-top: 32px;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #4f46e5;
+      }
+
+      p,
+      li {
+        line-height: 1.6;
+      }
+
+      .meta {
+        color: #475569;
+        margin: 10px 0 0;
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 28px;
+      }
+
+      .header-text {
+        flex: 1;
+      }
+
+      /* Photo container with entrance slide/fade */
+      .profile-photo-container {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateX(30px) scale(0.9);
+        filter: blur(8px);
+        animation: photoFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation-delay: 0.2s;
+      }
+
+      @keyframes photoFadeIn {
+        to {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      /* Outer rotating gradient border ring */
+      .profile-photo-ring {
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00D9FF, #7C5CFF, #A855F7, #00D9FF);
+        background-size: 200% 200%;
+        animation: borderRotate 6s linear infinite, glowPulse 3s ease-in-out infinite;
+        z-index: 1;
+      }
+
+      @keyframes borderRotate {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes glowPulse {
+        0%, 100% {
+          box-shadow: 0 0 15px rgba(0, 217, 255, 0.4), 0 0 30px rgba(124, 92, 255, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(0, 217, 255, 0.6), 0 0 45px rgba(168, 85, 247, 0.4);
+        }
+      }
+
+      /* Inner photo crop circle */
+      .profile-photo-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #fff;
+        overflow: hidden;
+        z-index: 2;
+        border: 3px solid white;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .profile-photo-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: scale 0.5s ease;
+      }
+
+      /* Hover states */
+      .profile-photo-container:hover .profile-photo-inner {
+        transform: scale(1.05);
+      }
+
+      .profile-photo-container:hover .profile-photo-inner img {
+        scale: 1.1;
+      }
+
+      .profile-photo-container:hover .profile-photo-ring {
+        animation: borderRotate 3s linear infinite, glowPulse 1.5s ease-in-out infinite;
+      }
+
+      @media (max-width: 640px) {
+        .header-container {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          gap: 24px;
+        }
+        .profile-photo-container {
+          width: 110px;
+          height: 110px;
+          align-self: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="header-container">
+        <div class="header-text">
+          <h1>Swarnima Singh</h1>
+          <p class="meta">B.Tech Artificial Intelligence & Machine Learning Student | Bennett University | 2025-2029</p>
+          <p class="meta">rajputsinghswarnima@gmail.com | github.com/Swarnima-web</p>
+        </div>
+        <div class="profile-photo-container">
+          <div class="profile-photo-ring"></div>
+          <div class="profile-photo-inner">
+            <img src="./swarnima.jpeg" alt="Swarnima Singh Profile Photo" />
+          </div>
+        </div>
+      </div>
+
+      <h2>Profile</h2>
+      <p>
+        Passionate AI and machine learning student interested in robotics, coding, game development, gaming, and
+        practical project building. Strong analytical thinker, problem solver, and continuous learner exploring modern
+        technologies.
+      </p>
+
+      <h2>Career Goal</h2>
+      <p>
+        Become an AI Engineer and Game Developer capable of building intelligent systems and immersive interactive
+        experiences while continuously learning modern technologies.
+      </p>
+
+      <h2>Education</h2>
+      <p><strong>Bennett University</strong><br />Bachelor of Technology, Artificial Intelligence & Machine Learning</p>
+
+      <h2>Certifications</h2>
+      <ul>
+        <li>AI Python for Beginners, DeepLearning.AI / Coursera</li>
+        <li>Engineering Probability and Statistics Part 1, Northeastern University / Coursera</li>
+        <li>Engineering Probability and Statistics Part 2, Northeastern University / Coursera</li>
+        <li>Solving Ordinary Differential Equations with MATLAB, MathWorks</li>
+        <li>Solving Nonlinear Equations with MATLAB, MathWorks</li>
+      </ul>
+
+      <h2>Interests</h2>
+      <p>Artificial Intelligence, Machine Learning, Robotics, Game Development, Web Development, Problem Solving.</p>
+    </main>
+  </body>
+</html>
