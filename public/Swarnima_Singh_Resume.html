@@ -3,205 +3,371 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swarnima Singh Resume</title>
+    <title>Swarnima Singh - Official Resume</title>
     <style>
+      @page {
+        size: A4 portrait;
+        margin: 12mm 15mm;
+      }
+      
       body {
         margin: 0;
-        font-family: Inter, Arial, sans-serif;
-        color: #111827;
-        background: #f8fafc;
-      }
-
-      main {
-        max-width: 820px;
-        margin: 40px auto;
-        padding: 48px;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #1e293b;
         background: white;
-        border: 1px solid #e5e7eb;
+        font-size: 10px;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      h1 {
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Header styling */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+      }
+
+      .header-info h1 {
         margin: 0;
-        font-size: 42px;
+        font-size: 26px;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+
+      .header-info .tagline {
+        margin: 3px 0;
+        font-size: 12px;
+        font-weight: 600;
+        color: #6366f1;
+        letter-spacing: 0.02em;
+      }
+
+      .contact-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 15px;
+        margin-top: 6px;
+        font-size: 9px;
+        color: #475569;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .profile-photo {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        border: 2px solid #e2e8f0;
+        object-fit: cover;
+      }
+
+      /* Main layout */
+      .resume-body {
+        display: grid;
+        grid-template-cols: 1.8fr 1fr;
+        gap: 24px;
+      }
+
+      /* Column sections */
+      section {
+        margin-bottom: 14px;
       }
 
       h2 {
-        margin-top: 32px;
-        font-size: 16px;
-        letter-spacing: 0.08em;
+        margin: 0 0 8px 0;
+        font-size: 11px;
+        font-weight: 700;
         text-transform: uppercase;
-        color: #4f46e5;
+        letter-spacing: 0.08em;
+        color: #0f172a;
+        border-bottom: 1.5px solid #cbd5e1;
+        padding-bottom: 3px;
       }
 
-      p,
-      li {
-        line-height: 1.6;
+      /* Detail items */
+      .item {
+        margin-bottom: 10px;
       }
 
-      .meta {
-        color: #475569;
-        margin: 10px 0 0;
-      }
-
-      .header-container {
+      .item-header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        gap: 30px;
-        border-bottom: 2px solid #f1f5f9;
-        padding-bottom: 28px;
+        font-weight: 700;
+        color: #0f172a;
+        font-size: 10.5px;
       }
 
-      .header-text {
-        flex: 1;
-      }
-
-      /* Photo container with entrance slide/fade */
-      .profile-photo-container {
-        position: relative;
-        width: 140px;
-        height: 140px;
-        flex-shrink: 0;
+      .item-sub {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transform: translateX(30px) scale(0.9);
-        filter: blur(8px);
-        animation: photoFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        animation-delay: 0.2s;
+        justify-content: space-between;
+        color: #475569;
+        font-style: italic;
+        margin-top: 1px;
+        font-size: 9.5px;
       }
 
-      @keyframes photoFadeIn {
-        to {
-          opacity: 1;
-          transform: translateX(0) scale(1);
-          filter: blur(0);
-        }
+      .item-description {
+        margin: 4px 0 0 0;
+        color: #334155;
+        text-align: justify;
       }
 
-      /* Outer rotating gradient border ring */
-      .profile-photo-ring {
-        position: absolute;
-        inset: -4px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #00D9FF, #7C5CFF, #A855F7, #00D9FF);
-        background-size: 200% 200%;
-        animation: borderRotate 6s linear infinite, glowPulse 3s ease-in-out infinite;
-        z-index: 1;
+      ul.bullets {
+        margin: 3px 0 0 0;
+        padding-left: 12px;
+        color: #334155;
       }
 
-      @keyframes borderRotate {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      ul.bullets li {
+        margin-bottom: 2px;
       }
 
-      @keyframes glowPulse {
-        0%, 100% {
-          box-shadow: 0 0 15px rgba(0, 217, 255, 0.4), 0 0 30px rgba(124, 92, 255, 0.2);
-        }
-        50% {
-          box-shadow: 0 0 25px rgba(0, 217, 255, 0.6), 0 0 45px rgba(168, 85, 247, 0.4);
-        }
+      /* Skills grid */
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
       }
 
-      /* Inner photo crop circle */
-      .profile-photo-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: #fff;
-        overflow: hidden;
-        z-index: 2;
-        border: 3px solid white;
-        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      .skill-tag {
+        font-weight: 600;
+        color: #0f172a;
+        font-size: 9.5px;
       }
 
-      .profile-photo-inner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: scale 0.5s ease;
+      .skill-desc {
+        color: #475569;
+        font-size: 8.5px;
+        margin: 1px 0 0 0;
       }
 
-      /* Hover states */
-      .profile-photo-container:hover .profile-photo-inner {
-        transform: scale(1.05);
+      /* Languages list */
+      .languages-list {
+        display: flex;
+        gap: 12px;
+        font-weight: 600;
+        color: #334155;
+        font-size: 9.5px;
       }
 
-      .profile-photo-container:hover .profile-photo-inner img {
-        scale: 1.1;
-      }
-
-      .profile-photo-container:hover .profile-photo-ring {
-        animation: borderRotate 3s linear infinite, glowPulse 1.5s ease-in-out infinite;
-      }
-
-      @media (max-width: 640px) {
-        .header-container {
-          flex-direction: column-reverse;
-          align-items: flex-start;
-          gap: 24px;
-        }
-        .profile-photo-container {
-          width: 110px;
-          height: 110px;
-          align-self: center;
-        }
+      /* General text adjustments */
+      .profile-text {
+        color: #334155;
+        margin: 0;
+        text-align: justify;
       }
     </style>
   </head>
   <body>
-    <main>
-      <div class="header-container">
-        <div class="header-text">
+    <div class="container">
+      <header>
+        <div class="header-info">
           <h1>Swarnima Singh</h1>
-          <p class="meta">B.Tech Artificial Intelligence & Machine Learning Student | Bennett University | 2025-2029</p>
-          <p class="meta">rajputsinghswarnima@gmail.com | github.com/Swarnima-web</p>
-        </div>
-        <div class="profile-photo-container">
-          <div class="profile-photo-ring"></div>
-          <div class="profile-photo-inner">
-            <img src="./swarnima.jpeg" alt="Swarnima Singh Profile Photo" />
+          <div class="tagline">B.Tech Student in Artificial Intelligence & Machine Learning</div>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <strong>Email:</strong>&nbsp;rajputsinghswarnima@gmail.com
+            </div>
+            <div class="contact-item">
+              <strong>GitHub:</strong>&nbsp;github.com/Swarnima-web
+            </div>
+            <div class="contact-item">
+              <strong>Portfolio:</strong>&nbsp;swarnima-portfolio-phi.vercel.app
+            </div>
           </div>
         </div>
+        <img class="profile-photo" src="./swarnima.jpeg" alt="Swarnima Singh" />
+      </header>
+
+      <div class="resume-body">
+        <!-- Left Column -->
+        <div class="left-col">
+          <section>
+            <h2>Profile Summary</h2>
+            <p class="profile-text">
+              Passionate Artificial Intelligence and Machine Learning engineering student at Bennett University with a strong builder's instinct. Driven by a deep curiosity for intelligent systems, robotics, and interactive environments. Analytical thinker and dedicated problem solver, skilled at translating theory into functional repositories, debugging workflows, and building structured code. Continuous learner exploring advanced AI and game engineering paradigms.
+            </p>
+          </section>
+
+          <section>
+            <h2>Academic Projects</h2>
+            <div class="item">
+              <div class="item-header">
+                <span>AI Learning Lab</span>
+                <span style="font-weight: 500; font-size: 9px; color: #4f46e5;">Python • Jupyter Notebooks</span>
+              </div>
+              <p class="item-description">
+                A hands-on workspace compiling machine learning and mathematical algorithms.
+              </p>
+              <ul class="bullets">
+                <li>Designed model training workflows focusing on foundational statistics and data representations.</li>
+                <li>Implemented clear, reproducible notebooks covering classification and optimization models.</li>
+                <li>Iteratively tested and documented algorithm outputs to establish solid machine learning pipelines.</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <span>Game Systems Prototype</span>
+                <span style="font-weight: 500; font-size: 9px; color: #4f46e5;">HTML5 Canvas • JavaScript</span>
+              </div>
+              <p class="item-description">
+                Interactive web-based gameplay environment focusing on client-side state execution.
+              </p>
+              <ul class="bullets">
+                <li>Built a lightweight, responsive game loop executing real-time coordinate physics and collision logic.</li>
+                <li>Designed clean UI structures for game states, player triggers, and feedback animations.</li>
+                <li>Managed event listeners and state machines to optimize player interactions and framerate stability.</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <span>Robotics Notes Engine</span>
+                <span style="font-weight: 500; font-size: 9px; color: #4f46e5;">Python • Markdown</span>
+              </div>
+              <p class="item-description">
+                A repository consolidating notes, motion simulation templates, and emerging hardware documentation.
+              </p>
+              <ul class="bullets">
+                <li>Compiled engineering concepts connecting matrix computations to physical kinematics models.</li>
+                <li>Structured system dynamics notes mapping sensor integration schemas and signal flows.</li>
+                <li>Created a modular markdown engine to navigate robotic architectures and algorithm paradigms.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Certifications</h2>
+            <div class="item" style="margin-bottom: 6px;">
+              <div class="item-header">
+                <span>AI Python for Beginners</span>
+                <span style="font-weight: 500; font-size: 9px; color: #475569;">DeepLearning.AI</span>
+              </div>
+            </div>
+            <div class="item" style="margin-bottom: 6px;">
+              <div class="item-header">
+                <span>Engineering Probability and Statistics (Parts 1 & 2)</span>
+                <span style="font-weight: 500; font-size: 9px; color: #475569;">Northeastern University</span>
+              </div>
+            </div>
+            <div class="item" style="margin-bottom: 6px;">
+              <div class="item-header">
+                <span>Solving Ordinary Differential Equations with MATLAB</span>
+                <span style="font-weight: 500; font-size: 9px; color: #475569;">MathWorks</span>
+              </div>
+            </div>
+            <div class="item" style="margin-bottom: 6px;">
+              <div class="item-header">
+                <span>Solving Nonlinear Equations with MATLAB</span>
+                <span style="font-weight: 500; font-size: 9px; color: #475569;">MathWorks</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-col">
+          <section>
+            <h2>Education</h2>
+            <div class="item">
+              <div class="item-header">
+                <span>Bennett University</span>
+              </div>
+              <div class="item-sub">
+                <span>B.Tech in AI & ML</span>
+                <span>2025 – 2029</span>
+              </div>
+              <p class="item-description" style="font-size: 8.5px; color: #475569; margin-top: 2px;">
+                Greater Noida, Uttar Pradesh, India
+              </p>
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <span>Om National Academy</span>
+              </div>
+              <div class="item-sub">
+                <span>+2 (Science Stream)</span>
+                <span>2023 – 2025</span>
+              </div>
+              <p class="item-description" style="font-size: 8.5px; color: #475569; margin-top: 2px;">
+                Birgunj, Nepal (Bio + Math Focus)
+              </p>
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <span>Kadambari Academy</span>
+              </div>
+              <div class="item-sub">
+                <span>Class X Secondary Ed.</span>
+                <span>2013 – 2023</span>
+              </div>
+              <p class="item-description" style="font-size: 8.5px; color: #475569; margin-top: 2px;">
+                Birgunj, Nepal
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-list">
+              <div>
+                <div class="skill-tag">Programming Languages</div>
+                <div class="skill-desc">Python, JavaScript, MATLAB, HTML5, CSS3, C, C++</div>
+              </div>
+              <div>
+                <div class="skill-tag">Artificial Intelligence & ML</div>
+                <div class="skill-desc">Model workflow, Probability & Stats, ML Notebook logic</div>
+              </div>
+              <div>
+                <div class="skill-tag">Game Development</div>
+                <div class="skill-desc">Game loops, coordinate physics, interactive gameplay systems</div>
+              </div>
+              <div>
+                <div class="skill-tag">Robotics Engineering</div>
+                <div class="skill-desc">Kinematics concepts, sensor workflows, system logic</div>
+              </div>
+              <div>
+                <div class="skill-tag">Analytical Strengths</div>
+                <div class="skill-desc">System decomposition, debugging workflows, modular logic</div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Core Hobbies</h2>
+            <p class="profile-text" style="font-size: 9px; line-height: 1.5; color: #475569;">
+              Gaming, Game Prototyping, Coding experiments, Sensors & Robotics, Solving algorithmic puzzles, Exploring emerging technologies.
+            </p>
+          </section>
+
+          <section>
+            <h2>Languages</h2>
+            <div class="languages-list">
+              <span>English</span>
+              <span>Hindi</span>
+              <span>Nepali</span>
+            </div>
+          </section>
+        </div>
       </div>
-
-      <h2>Profile</h2>
-      <p>
-        Passionate AI and machine learning student interested in robotics, coding, game development, gaming, and
-        practical project building. Strong analytical thinker, problem solver, and continuous learner exploring modern
-        technologies.
-      </p>
-
-      <h2>Career Goal</h2>
-      <p>
-        Become an AI Engineer and Game Developer capable of building intelligent systems and immersive interactive
-        experiences while continuously learning modern technologies.
-      </p>
-
-      <h2>Education</h2>
-      <p><strong>Bennett University</strong><br />Bachelor of Technology, Artificial Intelligence & Machine Learning</p>
-
-      <h2>Certifications</h2>
-      <ul>
-        <li>AI Python for Beginners, DeepLearning.AI / Coursera</li>
-        <li>Engineering Probability and Statistics Part 1, Northeastern University / Coursera</li>
-        <li>Engineering Probability and Statistics Part 2, Northeastern University / Coursera</li>
-        <li>Solving Ordinary Differential Equations with MATLAB, MathWorks</li>
-        <li>Solving Nonlinear Equations with MATLAB, MathWorks</li>
-      </ul>
-
-      <h2>Interests</h2>
-      <p>Artificial Intelligence, Machine Learning, Robotics, Game Development, Web Development, Problem Solving.</p>
-    </main>
+    </div>
   </body>
 </html>
